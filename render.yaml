@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: invoicex-ai
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m invoicex.scripts.make_synth --n 1000 --langs en de ar --out invoicex/data/synth_invoices.jsonl
+      python -m invoicex.scripts.train_models
+    startCommand: uvicorn invoicex.app.api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DB_URL
+        value: sqlite:////var/tmp/invoicex.db
+
