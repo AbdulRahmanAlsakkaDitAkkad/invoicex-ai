@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic>=2
+scikit-learn
+numpy
+pandas
+langdetect
+sqlalchemy
+joblib
+requests

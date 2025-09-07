@@ -1,0 +1,21 @@
+﻿# Python
+__pycache__/
+*.pyc
+@"
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local DB
+*.db
+
+# Notebooks checkpoints
+notebooks/.ipynb_checkpoints/
